@@ -14,7 +14,7 @@ export async function POST(request: Request) {
   try {
     const formData = await request.formData();
     const name = formData.get('name') as string;
-    const toEmail = formData.get('to_email') as string || 'nermenelkhamisy006@gmail.com';
+    const toEmail = formData.get('to_email') as string || 'khaledyehia37@gmail.com';
     const message = formData.get('message') as string;
     const messageType = formData.get('message_type') as string;
     const rsvpAttending = formData.get('rsvp_attending') as string;

@@ -57,13 +57,21 @@ export default function BackgroundAudio({ shouldPlay, volume = 0.3 }: Background
     }
   }, [shouldPlay, volume, isMuted])
 
-  // Update volume when mute state changes
+  // Update volume when mute state changes - immediate effect
   useEffect(() => {
     const audio = audioRef.current
     if (audio) {
+      // Immediately set volume to 0 when muted, or restore volume when unmuted
       audio.volume = isMuted ? 0 : volume
+      // Also pause if muted to ensure no sound
+      if (isMuted) {
+        audio.pause()
+      } else if (shouldPlay && !document.hidden) {
+        // Resume if unmuted and should be playing
+        audio.play().catch(() => {})
+      }
     }
-  }, [isMuted, volume])
+  }, [isMuted, volume, shouldPlay])
 
   // Pause audio when page becomes hidden or user navigates away
   useEffect(() => {

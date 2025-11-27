@@ -71,11 +71,7 @@ export default function ProAnimatedEngagementPage({ onImageLoad }: ProAnimatedEn
   }
 
   if (!mounted) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="text-foreground">{t('loading')}</div>
-      </div>
-    )
+    return null
   }
 
   return (
@@ -104,16 +100,6 @@ export default function ProAnimatedEngagementPage({ onImageLoad }: ProAnimatedEn
               onLoad={handleImageLoad}
               sizes="100vw"
             />
-            
-            {/* Minimal loading state */}
-            {!imageLoaded && (
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                <div className="flex flex-col items-center gap-2">
-                  <div className="w-6 h-6 border-2 border-accent border-t-transparent rounded-full animate-spin"></div>
-                  <span className="text-sm text-muted-foreground">Loading invitation...</span>
-                </div>
-              </div>
-            )}
           </div>
         </motion.div>
         
@@ -249,20 +235,23 @@ export default function ProAnimatedEngagementPage({ onImageLoad }: ProAnimatedEn
               className="prose prose-lg max-w-none text-gray-800 leading-relaxed"
               variants={scaleIn}
             >
-              <div className="text-center space-y-6" dir="rtl" lang="ar">
-                <p className="text-xl md:text-2xl font-light">
-                  سَبْعَةُ أَعْوَامٍ
-                  <br />
-                  وَنَحْنُ نَحْمِلُ بَعْضَنَا فِي قُلُوبٍ لَمْ تَتْعَبْ مِنَ الحُبِّ، رَغْمَ الصِّعَابِ الَّتِي مَرَرْنَا بِهَا، ظَلَّ الحُبُّ بَيْنَ رُوحَيْنَا أَعْمَقَ مِنْ أَيِّ وَجَعٍ، وَأَصْدَقَ مِنْ أَيِّ وَعْدٍ.
-                </p>
-                
-                <p className="text-xl md:text-2xl font-light">
-                  وَمَا زِلْتِ أَنْتِ – كَمَا كُنْتِ – حَبِيبَةَ عُمُرِي الَّتِي لَمْ تَتَغَيَّرْ مَلَامِحُهَا فِي قَلْبِي، وَلَا صَمَتَ صَوْتُهَا فِي رُوحِي.
-                </p>
-                
-                <p className="text-xl md:text-2xl font-light">
-                  أَمَّا فِي هَذَا اليَوْمِ، فَقَدْ وَضَعْتِ بَصْمَتَكِ عَلَى أَيَّامِي، وَصِرْتِ شَرِيكَةَ الرِّحْلَةِ وَزَوْجَتِي الدَّافِئَةَ، وَمَا زِلْتِ – كَمَا كُنْتِ دَائِمًا – حَبِيبَةَ العُمْرِ، يَا حَبِيبَةَ عُمُرِي.
-                </p>
+              {/* Inner frame with less blur for better text readability */}
+              <div className="bg-white/80 backdrop-blur-sm border border-white/50 rounded-2xl p-6 md:p-8 shadow-lg">
+                <div className="text-center space-y-6" dir="rtl" lang="ar">
+                  <p className="text-xl md:text-2xl font-light text-gray-900">
+                    سَبْعَةُ أَعْوَامٍ
+                    <br />
+                    وَنَحْنُ نَحْمِلُ بَعْضَنَا فِي قُلُوبٍ لَمْ تَتْعَبْ مِنَ الحُبِّ، رَغْمَ الصِّعَابِ الَّتِي مَرَرْنَا بِهَا، ظَلَّ الحُبُّ بَيْنَ رُوحَيْنَا أَعْمَقَ مِنْ أَيِّ وَجَعٍ، وَأَصْدَقَ مِنْ أَيِّ وَعْدٍ.
+                  </p>
+                  
+                  <p className="text-xl md:text-2xl font-light text-gray-900">
+                    وَمَا زِلْتِ أَنْتِ – كَمَا كُنْتِ – حَبِيبَةَ عُمُرِي الَّتِي لَمْ تَتَغَيَّرْ مَلَامِحُهَا فِي قَلْبِي، وَلَا صَمَتَ صَوْتُهَا فِي رُوحِي.
+                  </p>
+                  
+                  <p className="text-xl md:text-2xl font-light text-gray-900">
+                    أَمَّا فِي هَذَا اليَوْمِ، فَقَدْ وَضَعْتِ بَصْمَتَكِ عَلَى أَيَّامِي، وَصِرْتِ شَرِيكَةَ الرِّحْلَةِ وَزَوْجَتِي الدَّافِئَةَ، وَمَا زِلْتِ – كَمَا كُنْتِ دَائِمًا – حَبِيبَةَ العُمْرِ، يَا حَبِيبَةَ عُمُرِي.
+                  </p>
+                </div>
               </div>
             </motion.div>
           </div>

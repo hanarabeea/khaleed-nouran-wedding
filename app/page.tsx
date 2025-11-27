@@ -10,7 +10,7 @@ import BackgroundAudio from "@/components/background-audio"
 // Dynamically import the VideoIntro component with no SSR to prevent hydration issues
 const VideoIntro = dynamic(() => import("@/components/video-intro"), {
   ssr: false,
-  loading: () => <div className="fixed inset-0 bg-black flex items-center justify-center"><div className="text-white">Loading...</div></div>,
+  loading: () => null,
 })
 
 // Dynamically import the main content to ensure it's loaded only when needed
@@ -18,7 +18,7 @@ const ProAnimatedEngagementPage = dynamic(
   () => import("@/components/pro-animated-engagement-page"),
   { 
     ssr: false,
-    loading: () => <div className="fixed inset-0 bg-black flex items-center justify-center"><div className="text-white">Loading...</div></div>
+    loading: () => null
   }
 )
 
@@ -118,7 +118,7 @@ export default function Home() {
       
       {/* Main Content */}
       <div 
-        className={`w-full transition-opacity duration-1000 ease-out relative z-10 ${
+        className={`w-full relative z-10 ${
           showMain ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
         style={{ minHeight: '100vh' }}
