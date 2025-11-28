@@ -123,7 +123,7 @@ export default function ProAnimatedEngagementPage({ onImageLoad }: ProAnimatedEn
         variants={fadeIn}
       >
         <div className="max-w-5xl mx-auto">
-          <div className="bg-white/85 backdrop-blur-sm border border-white/30 rounded-3xl p-8 md:p-12 shadow-2xl">
+          <div className="bg-white/80 backdrop-blur-sm border border-white/30 rounded-3xl p-8 md:p-12 shadow-2xl">
             <motion.div 
               className="text-center mb-8"
               variants={slideUp}
@@ -153,7 +153,7 @@ export default function ProAnimatedEngagementPage({ onImageLoad }: ProAnimatedEn
         variants={fadeIn}
       >
         <div className="max-w-5xl mx-auto">
-          <div className="bg-white/85 backdrop-blur-sm border border-white/30 rounded-3xl p-8 md:p-12 shadow-2xl">
+          <div className="bg-white/80 backdrop-blur-sm border border-white/30 rounded-3xl p-8 md:p-12 shadow-2xl">
             <motion.div 
               className="text-center mb-12"
               variants={slideUp}
@@ -220,7 +220,7 @@ export default function ProAnimatedEngagementPage({ onImageLoad }: ProAnimatedEn
         variants={fadeIn}
       >
         <div className="max-w-5xl mx-auto">
-          <div className="bg-white/85 backdrop-blur-sm border border-white/30 rounded-3xl p-8 md:p-12 shadow-2xl">
+          <div className="bg-white/80 backdrop-blur-sm border border-white/30 rounded-3xl p-8 md:p-12 shadow-2xl">
             <motion.div 
               className="text-center mb-8"
               variants={slideUp}
@@ -264,7 +264,7 @@ export default function ProAnimatedEngagementPage({ onImageLoad }: ProAnimatedEn
         variants={fadeIn}
       >
         <div className="max-w-5xl mx-auto">
-          <div className="bg-white/85 backdrop-blur-sm border border-white/30 rounded-3xl p-8 md:p-12 shadow-2xl">
+          <div className="bg-white/80 backdrop-blur-sm border border-white/30 rounded-3xl p-8 md:p-12 shadow-2xl">
             <motion.div 
               className="text-center mb-8"
               variants={slideUp}
@@ -304,7 +304,7 @@ export default function ProAnimatedEngagementPage({ onImageLoad }: ProAnimatedEn
         variants={fadeIn}
       >
         <div className="max-w-5xl mx-auto">
-          <div className="bg-white/85 backdrop-blur-sm border border-white/30 rounded-3xl p-8 md:p-12 shadow-2xl">
+          <div className="bg-white/80 backdrop-blur-sm border border-white/30 rounded-3xl p-8 md:p-12 shadow-2xl">
             <motion.div 
               className="text-center mb-8"
               variants={slideUp}

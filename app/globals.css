@@ -145,7 +145,7 @@
   /* Android fallback for backdrop-blur - ensure solid background when blur isn't supported */
   @supports not (backdrop-filter: blur(4px)) {
     .backdrop-blur-sm {
-      background-color: rgba(255, 255, 255, 0.90) !important;
+      background-color: rgba(255, 255, 255, 0.85) !important;
     }
   }
   
