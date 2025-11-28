@@ -141,4 +141,29 @@
   [dir="ltr"] {
     direction: ltr;
   }
+  
+  /* Android fallback for backdrop-blur - ensure solid background when blur isn't supported */
+  @supports not (backdrop-filter: blur(4px)) {
+    .backdrop-blur-sm {
+      background-color: rgba(255, 255, 255, 0.98) !important;
+    }
+  }
+  
+  /* Better text rendering on Android */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Ensure proper RTL rendering on Android */
+  [dir="rtl"] {
+    text-align: right;
+    unicode-bidi: embed;
+  }
+  
+  [dir="ltr"] {
+    text-align: left;
+    unicode-bidi: embed;
+  }
 }

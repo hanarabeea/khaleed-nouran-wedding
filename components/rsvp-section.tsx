@@ -85,7 +85,7 @@ export default function RSVPSection() {
       className="py-16 px-4 md:py-20"
     >
       <div className="max-w-5xl mx-auto">
-        <div className="bg-white/60 backdrop-blur-sm border border-white/30 rounded-3xl p-8 md:p-12 shadow-2xl">
+        <div className="bg-white/95 backdrop-blur-sm border border-white/30 rounded-3xl p-8 md:p-12 shadow-2xl">
           <motion.div 
             className="text-center mb-8"
             initial="hidden"
