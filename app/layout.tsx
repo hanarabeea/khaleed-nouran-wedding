@@ -16,9 +16,37 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: "Welcome to Our Wedding",
+  title: {
+    default: "Welcome to Our Wedding",
+    template: "%s | hamoody",
+  },
   description: "Celebrating our wedding - Khaled & Nouran",
+  applicationName: "hamoody",
   generator: "v0.app",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://khaled-nouran.digitivaa.com'),
+  openGraph: {
+    title: "Welcome to Our Wedding",
+    description: "Celebrating our wedding - Khaled & Nouran",
+    type: "website",
+    siteName: "hamoody",
+    images: [
+      {
+        url: "/invitation-design.png",
+        width: 1200,
+        height: 630,
+        alt: "Wedding Invitation - Khaled & Nouran",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Welcome to Our Wedding",
+    description: "Celebrating our wedding - Khaled & Nouran",
+    images: ["/invitation-design.png"],
+  },
+  alternates: {
+    canonical: "/",
+  },
 }
 
 export default function RootLayout({

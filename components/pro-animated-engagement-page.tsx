@@ -17,7 +17,7 @@ const fadeIn: Variants = {
   visible: {
     opacity: 1,
     transition: { 
-      duration: 0.8,
+      duration: 0,
       ease: [0.22, 1, 0.36, 1] as const
     }
   }
@@ -41,7 +41,7 @@ const scaleIn: Variants = {
     scale: 1,
     opacity: 1,
     transition: {
-      duration: 0.8,
+      duration: 0,
       ease: [0.22, 1, 0.36, 1] as const
     }
   }
@@ -79,7 +79,7 @@ export default function ProAnimatedEngagementPage({ onImageLoad }: ProAnimatedEn
       {/* Hero Section - full viewport, edge to edge */}
       <motion.section 
         className="relative flex items-center justify-center px-0 py-0 h-screen"
-        initial="hidden"
+        initial={false}
         animate="visible"
         variants={fadeIn}
       >
@@ -123,7 +123,7 @@ export default function ProAnimatedEngagementPage({ onImageLoad }: ProAnimatedEn
         variants={fadeIn}
       >
         <div className="max-w-5xl mx-auto">
-          <div className="bg-white/40 backdrop-blur-md border border-white/30 rounded-3xl p-8 md:p-12 shadow-2xl">
+          <div className="bg-white/60 backdrop-blur-sm border border-white/30 rounded-3xl p-8 md:p-12 shadow-2xl">
             <motion.div 
               className="text-center mb-8"
               variants={slideUp}
@@ -153,7 +153,7 @@ export default function ProAnimatedEngagementPage({ onImageLoad }: ProAnimatedEn
         variants={fadeIn}
       >
         <div className="max-w-5xl mx-auto">
-          <div className="bg-white/40 backdrop-blur-md border border-white/30 rounded-3xl p-8 md:p-12 shadow-2xl">
+          <div className="bg-white/60 backdrop-blur-sm border border-white/30 rounded-3xl p-8 md:p-12 shadow-2xl">
             <motion.div 
               className="text-center mb-12"
               variants={slideUp}
@@ -220,7 +220,7 @@ export default function ProAnimatedEngagementPage({ onImageLoad }: ProAnimatedEn
         variants={fadeIn}
       >
         <div className="max-w-5xl mx-auto">
-          <div className="bg-white/40 backdrop-blur-md border border-white/30 rounded-3xl p-8 md:p-12 shadow-2xl">
+          <div className="bg-white/60 backdrop-blur-sm border border-white/30 rounded-3xl p-8 md:p-12 shadow-2xl">
             <motion.div 
               className="text-center mb-8"
               variants={slideUp}
@@ -235,23 +235,20 @@ export default function ProAnimatedEngagementPage({ onImageLoad }: ProAnimatedEn
               className="prose prose-lg max-w-none text-gray-800 leading-relaxed"
               variants={scaleIn}
             >
-              {/* Inner frame with less blur for better text readability */}
-              <div className="bg-white/80 backdrop-blur-sm border border-white/50 rounded-2xl p-6 md:p-8 shadow-lg">
-                <div className="text-center space-y-6" dir="rtl" lang="ar">
-                  <p className="text-xl md:text-2xl font-light text-gray-900">
-                    سَبْعَةُ أَعْوَامٍ
-                    <br />
-                    وَنَحْنُ نَحْمِلُ بَعْضَنَا فِي قُلُوبٍ لَمْ تَتْعَبْ مِنَ الحُبِّ، رَغْمَ الصِّعَابِ الَّتِي مَرَرْنَا بِهَا، ظَلَّ الحُبُّ بَيْنَ رُوحَيْنَا أَعْمَقَ مِنْ أَيِّ وَجَعٍ، وَأَصْدَقَ مِنْ أَيِّ وَعْدٍ.
-                  </p>
-                  
-                  <p className="text-xl md:text-2xl font-light text-gray-900">
-                    وَمَا زِلْتِ أَنْتِ – كَمَا كُنْتِ – حَبِيبَةَ عُمُرِي الَّتِي لَمْ تَتَغَيَّرْ مَلَامِحُهَا فِي قَلْبِي، وَلَا صَمَتَ صَوْتُهَا فِي رُوحِي.
-                  </p>
-                  
-                  <p className="text-xl md:text-2xl font-light text-gray-900">
-                    أَمَّا فِي هَذَا اليَوْمِ، فَقَدْ وَضَعْتِ بَصْمَتَكِ عَلَى أَيَّامِي، وَصِرْتِ شَرِيكَةَ الرِّحْلَةِ وَزَوْجَتِي الدَّافِئَةَ، وَمَا زِلْتِ – كَمَا كُنْتِ دَائِمًا – حَبِيبَةَ العُمْرِ، يَا حَبِيبَةَ عُمُرِي.
-                  </p>
-                </div>
+              <div className="text-center space-y-6" dir="rtl" lang="ar">
+                <p className="text-xl md:text-2xl font-light text-gray-900">
+                  سَبْعَةُ أَعْوَامٍ
+                  <br />
+                  وَنَحْنُ نَحْمِلُ بَعْضَنَا فِي قُلُوبٍ لَمْ تَتْعَبْ مِنَ الحُبِّ، رَغْمَ الصِّعَابِ الَّتِي مَرَرْنَا بِهَا، ظَلَّ الحُبُّ بَيْنَ رُوحَيْنَا أَعْمَقَ مِنْ أَيِّ وَجَعٍ، وَأَصْدَقَ مِنْ أَيِّ وَعْدٍ.
+                </p>
+                
+                <p className="text-xl md:text-2xl font-light text-gray-900">
+                  وَمَا زِلْتِ أَنْتِ – كَمَا كُنْتِ – حَبِيبَةَ عُمُرِي الَّتِي لَمْ تَتَغَيَّرْ مَلَامِحُهَا فِي قَلْبِي، وَلَا صَمَتَ صَوْتُهَا فِي رُوحِي.
+                </p>
+                
+                <p className="text-xl md:text-2xl font-light text-gray-900">
+                  أَمَّا فِي هَذَا اليَوْمِ، فَقَدْ وَضَعْتِ بَصْمَتَكِ عَلَى أَيَّامِي، وَصِرْتِ شَرِيكَةَ الرِّحْلَةِ وَزَوْجَتِي الدَّافِئَةَ، وَمَا زِلْتِ – كَمَا كُنْتِ دَائِمًا – حَبِيبَةَ العُمْرِ، يَا حَبِيبَةَ عُمُرِي.
+                </p>
               </div>
             </motion.div>
           </div>
@@ -267,7 +264,7 @@ export default function ProAnimatedEngagementPage({ onImageLoad }: ProAnimatedEn
         variants={fadeIn}
       >
         <div className="max-w-5xl mx-auto">
-          <div className="bg-white/40 backdrop-blur-md border border-white/30 rounded-3xl p-8 md:p-12 shadow-2xl">
+          <div className="bg-white/60 backdrop-blur-sm border border-white/30 rounded-3xl p-8 md:p-12 shadow-2xl">
             <motion.div 
               className="text-center mb-8"
               variants={slideUp}
@@ -307,7 +304,7 @@ export default function ProAnimatedEngagementPage({ onImageLoad }: ProAnimatedEn
         variants={fadeIn}
       >
         <div className="max-w-5xl mx-auto">
-          <div className="bg-white/40 backdrop-blur-md border border-white/30 rounded-3xl p-8 md:p-12 shadow-2xl">
+          <div className="bg-white/60 backdrop-blur-sm border border-white/30 rounded-3xl p-8 md:p-12 shadow-2xl">
             <motion.div 
               className="text-center mb-8"
               variants={slideUp}

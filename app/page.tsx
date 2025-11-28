@@ -68,6 +68,14 @@ export default function Home() {
     }
   }, [mounted, isImageLoaded, handleImageLoad])
 
+  // Preload the main component immediately on mount
+  useEffect(() => {
+    if (mounted) {
+      // Force the dynamic import to load
+      import("@/components/pro-animated-engagement-page")
+    }
+  }, [mounted])
+
   if (!mounted) {
     return <main className="min-h-screen bg-black" />
   }
@@ -106,24 +114,32 @@ export default function Home() {
       </div>
       
             {/* Video Intro */}
-            {!showMain && (
-              <div className="fixed inset-0 z-50">
-                <VideoIntro 
-                  onComplete={handleVideoComplete} 
-                />
-              </div>
-            )}
+            <div 
+              className="fixed inset-0 z-50"
+              style={{ 
+                opacity: showMain ? 0 : 1,
+                pointerEvents: showMain ? 'none' : 'auto',
+                transition: 'none',
+                visibility: showMain ? 'hidden' : 'visible',
+              }}
+            >
+              {!showMain && <VideoIntro onComplete={handleVideoComplete} />}
+            </div>
             
             
       
-      {/* Main Content */}
+      {/* Main Content - Pre-rendered but hidden until showMain */}
       <div 
-        className={`w-full relative z-10 ${
-          showMain ? 'opacity-100' : 'opacity-0 pointer-events-none'
-        }`}
-        style={{ minHeight: '100vh' }}
+        className="w-full relative z-10"
+        style={{ 
+          minHeight: '100vh',
+          opacity: showMain ? 1 : 0,
+          pointerEvents: showMain ? 'auto' : 'none',
+          transition: 'none',
+          visibility: showMain ? 'visible' : 'hidden',
+        }}
       >
-        {showMain && <ProAnimatedEngagementPage onImageLoad={handleImageLoad} />}
+        <ProAnimatedEngagementPage onImageLoad={handleImageLoad} />
         
         {/* Scroll down indicator - only show after video ends */}
         {showMain && (

@@ -353,7 +353,7 @@ export default function HandwrittenMessage() {
   return (
     <div className="select-none">
       {/* Message Type Selection */}
-      <div className="bg-white/40 backdrop-blur-sm border border-white/30 rounded-2xl p-6 md:p-8 shadow-lg">
+      <div className="bg-white/60 backdrop-blur-sm border border-white/30 rounded-2xl p-6 md:p-8 shadow-lg">
             <div className="flex flex-col md:flex-row gap-4 justify-center mb-6">
               <button
                 type="button"
