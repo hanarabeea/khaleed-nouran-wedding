@@ -353,7 +353,7 @@ export default function HandwrittenMessage() {
   return (
     <div className="select-none">
       {/* Message Type Selection */}
-      <div className="bg-white/95 backdrop-blur-sm border border-white/30 rounded-2xl p-6 md:p-8 shadow-lg">
+      <div className="bg-white/85 backdrop-blur-sm border border-white/30 rounded-2xl p-6 md:p-8 shadow-lg">
             <div className="flex flex-col md:flex-row gap-4 justify-center mb-6">
               <button
                 type="button"
@@ -388,16 +388,16 @@ export default function HandwrittenMessage() {
                 
                 {/* Pen Options */}
                 <div className="mb-6">
-                  <div className="flex flex-wrap gap-4 justify-center mb-4">
-                    <div className="flex items-center gap-2">
-                      <span className="text-sm font-medium text-gray-700">{t('color')}</span>
-                      <div className="flex gap-1">
+                  <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center items-center mb-4">
+                    <div className="flex items-center gap-2 flex-shrink-0">
+                      <span className="text-xs sm:text-sm font-medium text-gray-700 whitespace-nowrap">{t('color')}</span>
+                      <div className="flex gap-1 flex-wrap">
                         {penColors.map((pen) => (
                           <button
                             key={pen.color}
                             type="button"
                             onClick={() => setCurrentColor(pen.color)}
-                            className={`w-8 h-8 rounded-full border-2 ${
+                            className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 flex-shrink-0 ${
                               currentColor === pen.color ? 'border-gray-800' : 'border-gray-300'
                             }`}
                             style={{ backgroundColor: pen.color }}
@@ -407,15 +407,15 @@ export default function HandwrittenMessage() {
                       </div>
                     </div>
                     
-                    <div className="flex items-center gap-2">
-                      <span className="text-sm font-medium text-gray-700">{t('width')}</span>
-                      <div className="flex gap-1">
+                    <div className="flex items-center gap-2 flex-shrink-0">
+                      <span className="text-xs sm:text-sm font-medium text-gray-700 whitespace-nowrap">{t('width')}</span>
+                      <div className="flex gap-1 flex-wrap">
                         {penWidths.map((pen) => (
                           <button
                             key={pen.width}
                             type="button"
                             onClick={() => setCurrentWidth(pen.width)}
-                            className={`px-2 py-1 text-xs rounded-md transition-colors ${
+                            className={`px-2 py-1 text-[10px] sm:text-xs rounded-md transition-colors whitespace-nowrap ${
                               currentWidth === pen.width
                                 ? 'bg-gradient-to-r from-pink-300 to-orange-300 text-white'
                                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -488,12 +488,12 @@ export default function HandwrittenMessage() {
             </div>
 
             <form onSubmit={sendEmail} className="space-y-4">
-              <div className="flex justify-between items-center pt-2">
+              <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-3 pt-2">
                 {messageType === 'handwritten' && (
                   <button
                     type="button"
                     onClick={clearCanvas}
-                    className="px-6 py-3 text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors font-medium"
+                    className="px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors font-medium whitespace-nowrap"
                     disabled={isSending}
                   >
                     {t('clearCanvas')}
@@ -501,7 +501,7 @@ export default function HandwrittenMessage() {
                 )}
                 <button
                   type="submit"
-                  className="px-8 py-3 text-white bg-gradient-to-r from-pink-400 to-orange-400 rounded-md hover:from-pink-500 hover:to-orange-500 disabled:opacity-50 transition-all font-medium shadow-lg"
+                  className="px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base text-white bg-gradient-to-r from-pink-400 to-orange-400 rounded-md hover:from-pink-500 hover:to-orange-500 disabled:opacity-50 transition-all font-medium shadow-lg whitespace-nowrap"
                   disabled={isSending}
                 >
                   {isSending ? t('sending') : t('sendMessage')}

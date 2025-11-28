@@ -66,11 +66,11 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
             <div className="absolute inset-0 bg-gradient-to-br from-pink-200/30 to-orange-200/30 rounded-full blur-lg scale-125 opacity-40"></div>
             
             {/* Main content */}
-            <div className="relative flex flex-col items-center justify-center p-4 md:p-6 bg-white/95 backdrop-blur-sm border border-white/40 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-110 hover:-translate-y-2">
-              <div className="text-4xl md:text-5xl lg:text-6xl font-serif text-gray-800 font-light tracking-tight mb-2">
+            <div className="relative flex flex-col items-center justify-center p-4 md:p-6 bg-white/85 backdrop-blur-sm border border-white/40 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-110 hover:-translate-y-2">
+              <div className="text-4xl md:text-5xl lg:text-6xl font-serif text-gray-800 font-light tracking-tight mb-2 whitespace-nowrap">
                 {unit.value.toString().padStart(2, "0")}
               </div>
-              <div className="text-xs md:text-sm text-gray-600 uppercase tracking-widest font-light">
+              <div className="text-[10px] sm:text-xs md:text-sm text-gray-600 uppercase tracking-widest font-light text-center leading-tight whitespace-nowrap">
                 {unit.label}
               </div>
             </div>
